@@ -1,5 +1,5 @@
 ---
-title: "Visualizations Practice 2"
+title: "Visualizations"
 author: "Abhilash Roy"
 date: "3/25/2021"
 output: pdf_document
@@ -228,4 +228,3 @@ temp_carbon %>% filter(!is.na(temp_anomaly),!is.na(land_anomaly),
 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
