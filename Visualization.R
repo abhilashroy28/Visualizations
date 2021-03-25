@@ -1,3 +1,21 @@
+library(tidyverse) 
+library(ggthemes)
+library(ggrepel)
+library(gridExtra)
+library(hexbin)
+library(ggExtra)
+library(cowplot)
+library(gtools)
+library(knitr)
+library(rmarkdown)
+
+#datasets
+library(dslabs)
+library(nycflights13)
+library(NHANES)
+library(titanic)
+
+
 ###############################################################################
 
 labels_country <-
@@ -68,11 +86,8 @@ Females <-
       filter(sex == "Female") %>% ggplot(aes(height,height)) + 
       geom_boxplot() + theme_economist()
 
-ggsave('R/Females.png')
 
 plot_grid(Males, Females, labels = c('Males', 'Females'), label_size = 12)
-
-grid.arrange(Males, Females, ncol = 2) + align.plots(Males,Females)
 ###############################################################################
 
 heights %>% 
