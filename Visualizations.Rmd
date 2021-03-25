@@ -12,26 +12,33 @@ extra_dependencies: [animate, coffee4]
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-## Including Plots
-
-
-```{r pressure, echo=TRUE}
+```{r include=FALSE}
 library(tidyverse) 
 library(ggthemes)
 library(ggrepel)
 library(gridExtra)
 library(ggExtra)
 library(cowplot)
-library(gtools)
+library(gtools) # combinations & permutations
 library(knitr)
 library(rmarkdown)
-library(tinytex)
-#datasets
-library(dslabs)
-library(nycflights13)
-library(NHANES)
-library(titanic)
+library(sf)
+library(googleway)
+library(rnaturalearth)
+library(ggspatial)
+library(rnaturalearthdata)
+library(rgeos)
+library(wordcloud)
+library(wordcloud2)
+library(RColorBrewer) #sequential color palette
+library(dslabs)               # datasets
+library(nycflights13)         # datasets
+library(NHANES)               # datasets
+library(titanic)              # datasets
+```
+##  Plots
+
+```{r pressure, echo=TRUE}
 
 murder_rate <- murders %>% summarize(rate = sum(total)/sum(population) * 10^6) %>% pull(rate)
 

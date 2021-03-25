@@ -2,18 +2,24 @@ library(tidyverse)
 library(ggthemes)
 library(ggrepel)
 library(gridExtra)
-library(hexbin)
 library(ggExtra)
 library(cowplot)
-library(gtools)
+library(gtools) # combinations & permutations
 library(knitr)
 library(rmarkdown)
-
-#datasets
-library(dslabs)
-library(nycflights13)
-library(NHANES)
-library(titanic)
+library(sf)
+library(googleway)
+library(rnaturalearth)
+library(ggspatial)
+library(rnaturalearthdata)
+library(rgeos)
+library(wordcloud)
+library(wordcloud2)
+library(RColorBrewer) #sequential color palette
+library(dslabs)               # datasets
+library(nycflights13)         # datasets
+library(NHANES)               # datasets
+library(titanic)              # datasets
 
 
 ###############################################################################
