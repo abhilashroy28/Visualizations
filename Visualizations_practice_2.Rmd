@@ -3,6 +3,9 @@ title: "Visualizations Practice 2"
 author: "Abhilash Roy"
 date: "3/25/2021"
 output: html_document
+# animation? Coffee stains?!
+latex_document:
+extra_dependencies: [animate, coffee4]
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +14,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ## Including Plots
-
 
 
 ```{r pressure, echo=TRUE}
@@ -43,13 +45,6 @@ murders %>%
   geom_abline(intercept = log10(murder_rate), lty = 2, color = "darkgrey") +
   ggtitle("Murders in US in 2020") + scale_color_discrete(name = "Region")
 
-data(mtcars)
-
-mtcars %>% 
-  ggplot(aes(hp, mpg)) + geom_point(size = 3, color = "red") + 
-  xlab("Horse Power(Log Scale)") + ylab("Miles per Gallon(Log Scale)") +
-  ggtitle("MTcars") + scale_x_log10() + scale_y_log10() +
-  theme_economist() + geom_line()
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
