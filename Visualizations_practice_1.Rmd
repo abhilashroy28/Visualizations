@@ -2,8 +2,9 @@
 title: "Visualizations Practice 1"
 author: "Abhilash Roy"
 date: "3/25/2021"
-output: html_document
-
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -33,7 +34,13 @@ library(nycflights13)
 library(NHANES)
 library(titanic)
 
+data(mtcars)
 
+mtcars %>% 
+  ggplot(aes(hp, mpg)) + geom_point(size = 3, color = "red") + 
+  xlab("Horse Power(Log Scale)") + ylab("Miles per Gallon(Log Scale)") +
+  ggtitle("MTcars") + scale_x_log10() + scale_y_log10() +
+  theme_economist() + geom_line()
 
 labels_country <-
   data.frame(country = c("South Korea","Germany", "India", "China", "Pakistan"), 

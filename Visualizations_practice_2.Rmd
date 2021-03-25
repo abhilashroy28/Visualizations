@@ -2,7 +2,7 @@
 title: "Visualizations Practice 2"
 author: "Abhilash Roy"
 date: "3/25/2021"
-output: html_document
+output: pdf_document
 # animation? Coffee stains?!
 latex_document:
 extra_dependencies: [animate, coffee4]
@@ -21,13 +21,12 @@ library(tidyverse)
 library(ggthemes)
 library(ggrepel)
 library(gridExtra)
-library(hexbin)
 library(ggExtra)
 library(cowplot)
 library(gtools)
 library(knitr)
 library(rmarkdown)
-
+library(tinytex)
 #datasets
 library(dslabs)
 library(nycflights13)
