@@ -1,0 +1,59 @@
+---
+title: "Visualizations Practice 2"
+author: "Abhilash Roy"
+date: "3/25/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Including Plots
+
+
+
+```{r pressure, echo=TRUE}
+library(tidyverse) 
+library(ggthemes)
+library(ggrepel)
+library(gridExtra)
+library(hexbin)
+library(ggExtra)
+library(cowplot)
+library(gtools)
+library(knitr)
+library(rmarkdown)
+
+#datasets
+library(dslabs)
+library(nycflights13)
+library(NHANES)
+library(titanic)
+
+murder_rate <- murders %>% summarize(rate = sum(total)/sum(population) * 10^6) %>% pull(rate)
+
+murders %>% 
+  ggplot(aes(population/10^6, total, label = abb)) +
+  geom_point(aes(color = region), size = 3) + geom_text_repel(nudge_x = 0.075) + 
+  theme_economist() + scale_x_log10() + scale_y_log10() + 
+  xlab("Population per million (Logic Scale)") +
+  ylab("Total no. of murders(Logic Scale)") + 
+  geom_abline(intercept = log10(murder_rate), lty = 2, color = "darkgrey") +
+  ggtitle("Murders in US in 2020") + scale_color_discrete(name = "Region")
+
+## lty = 2 changes line type from solid to dashed
+## xlab, ylab, ggtitle <- x axis , y axis, title naming
+## scale_color_discrete <- Capitalize legends title for scatterplots
+
+data(mtcars)
+
+mtcars %>% 
+  ggplot(aes(hp, mpg)) + geom_point(size = 3, color = "red") + 
+  xlab("Horse Power(Log Scale)") + ylab("Miles per Gallon(Log Scale)") +
+  ggtitle("MTcars") + scale_x_log10() + scale_y_log10() +
+  theme_economist() + geom_line()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
