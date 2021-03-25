@@ -43,10 +43,6 @@ murders %>%
   geom_abline(intercept = log10(murder_rate), lty = 2, color = "darkgrey") +
   ggtitle("Murders in US in 2020") + scale_color_discrete(name = "Region")
 
-## lty = 2 changes line type from solid to dashed
-## xlab, ylab, ggtitle <- x axis , y axis, title naming
-## scale_color_discrete <- Capitalize legends title for scatterplots
-
 data(mtcars)
 
 mtcars %>% 
