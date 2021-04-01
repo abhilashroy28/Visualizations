@@ -241,18 +241,4 @@ temp_carbon %>% filter(!is.na(temp_anomaly),!is.na(land_anomaly),
 
 
 
-murders %>% 
-  ggplot(aes(population/10^6, total, color = region, label = abb)) +
-  geom_point() + xlab("State population per million (2010)") + 
-  ylab("Number of gun murders in state (2010)") + 
-  geom_text_repel(nudge_x = 0.075) +
-  scale_x_log10() + scale_y_log10() +
-  ggtitle("US gun murders by state for 2010", 
-          subtitle = "Gun murder data from FBI reports.") +
-  theme(plot.title = element_text(hjust = 0.5, color = "blue", size = 15)) +
-  theme(plot.subtitle = element_text(hjust = 0.5, color = "purple")) +
-  theme(legend.position = "none")
-
-
-
 
